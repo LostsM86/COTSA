@@ -158,6 +158,8 @@ def test_clean_attr1_rules(att_folder, attr_id_name="attr_ids_1", attr_type_name
                             'http://dbpedia.org/ontology/latestReleaseVersion', 'http://dbpedia.org/ontology/latestPreviewVersion', 'http://dbpedia.org/ontology/areaCode', 'http://dbpedia.org/ontology/utcOffset', 'http://dbpedia.org/ontology/leaderTitle', 'http://dbpedia.org/ontology/areaWater', 'http://dbpedia.org/ontology/postalCode', 'http://dbpedia.org/ontology/populationAsOf', 'http://dbpedia.org/ontology/numberOfPages', 'http://dbpedia.org/ontology/areaLand', 'http://dbpedia.org/ontology/areaWater', 'http://dbpedia.org/ontology/percentageOfAreaWater', 'http://dbpedia.org/ontology/populationDensity', 'http://dbpedia.org/ontology/censusYear', 'http://dbpedia.org/ontology/orderInOffice', 'http://dbpedia.org/ontology/serviceEndYear', 'http://dbpedia.org/ontology/serviceStartYear', 'http://dbpedia.org/ontology/militaryCommand', 'http://dbpedia.org/ontology/signature', 'http://dbpedia.org/ontology/areaWater', 'http://dbpedia.org/ontology/productionStartYear', 'http://dbpedia.org/ontology/productionEndYear', 'http://dbpedia.org/ontology/wheelbase', 'http://dbpedia.org/ontology/transmission']:
                     attr_name_delete.append(name)
                 else:
+                    # 比如插入 [a, b, c, d, e, c, b, a, a, b, e, f]
+                    # 最后变成 {[a, 5], [b, 5], [c, 5], [d, 3], [e, 5], [f,5]}
                     attr_name_use[name] = len(attr_name_use)
                     wf.write(name + "\t" + str(attr_name_use[name]) + "\n")
         print("deleted attr size:", len(attr_name_delete),
