@@ -191,5 +191,3 @@ def check_att_num_length(att_folder, file_name="clean_new_filtered_att_triples_1
 
 # step 3: get the input pickle for the attribution information.
 _get_tdata(att_folder="E:/githubWorkSpace/KnowledgeAlignmentDataset/15kdata/db-wiki_V2/attrs/", attr_value_length=40)
-
-
